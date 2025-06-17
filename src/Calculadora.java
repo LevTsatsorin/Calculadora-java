@@ -10,6 +10,11 @@ public class Calculadora {
         while (shouldContinue) {
             String input = requestOperation();
 
+            if (input == null) {
+                // Usuario canceló el diálogo
+                break;
+            }
+
             try {
                 double result = evaluateOperation(extractOperandsAndOperator(input));
                 showResult(result);
